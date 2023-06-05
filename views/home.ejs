@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div class="content">
+        <h1>To Do List</h1>
+        <form action="/create-item" method="POST">
+            <div class="desc">
+                <label for="description">DESCRIPTION</label><br>
+                <input type="text" name="description" placeholder="What do you need to do?" required>
+            </div>
+            <div class="box">
+                <div class="cat">
+                <label for="category">CATEGORY</label><br>
+                
+                <select name="category" id="category" required placeholder="Choose a Category">
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="other">Other</option>
+                </select>
+                </div>
+                <div class="cat">
+                <label for="date">DUE DATE</label><br>
+                <input type="date" name="date" placeholder="dd/mm/yyyy" required>
+                </div>
+            </div>
+            <button class="add" type="submit"> Add Task</button>
+        </form>
+        <div>
+            <ul>
+                <% for(let i of todo_list) {%>
+                    <li>
+                        <div class="delete-button">
+                            <a href="/delete-item/?id=<%= i._id%>"><button class="del">Delete</button></a>
+                        </div>
+                        <div>
+                        <p>
+                            <%= i.description %>
+                        </p>
+                        <p>
+                            <!-- <%= i.date %>  -->
+                            <% var date=new Date(i.date)%>
+                                <% var d=date.getDate()%>
+                                    <% var month=date.getMonth()+1 %>
+                                        <% var year=date.getFullYear() %>
+                                            <%var m=parseInt(month)%>
+                                                <!-- Create arr for mapping the Month name with Month number-->
+                                                <%var arr=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]%>
+                            
+                                                    <span class="dueDt">
+                                                        <%= arr[m-1]%>
+                                                            <%= d %>, <%= year %>
+                                                    </span>
+                        </p>
+                        </div>
+                        <p class="show-cat">
+                            <%= i.category %>
+                        </p>
+                    </li>
+                    
+                    <% } %>
+            </ul>
+        </div>
+        </div>
+    </body>
+</html>

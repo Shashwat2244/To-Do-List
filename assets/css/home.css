@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(94, 94, 94);
+    list-style-type: none;
+}
+
+body{
+    text-align: center;
+}
+
+.desc{
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.desc input{
+    padding-top: 5px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.cat{
+width: 50%;
+text-align: left;
+border-right: 1px solid grey ;
+border-bottom: 1px solid grey;
+padding: 10px;
+}
+
+.add{
+    color: rgb(247, 239, 239);
+    background-color: rgb(34, 33, 33);
+}
+
+form{
+    border-bottom: 1px solid grey;
+}
+
+.del{
+    color: rgb(226, 214, 200);
+    background-color: red;
+}
+
+li{
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+
+li div p{
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+li div span{
+    font-size: 12px;
+}
+
+.show-cat{
+    text-transform: capitalize;
+    color: rgb(233, 226, 212);
+    padding: 5px;
+    text-align: center;
+    background: rgb(184, 159, 20);
+    margin: 5px;
+    margin-left: 480px;
+    width: 60px;
+}
+
+button{
+    border: none;
+    height: 30px;
+    width: 80px;
+    margin: 10px;
+}
+
+.cat select{
+    width: 100%;
+    border: none;
+}
+
+.cat input{
+    width: 100%;
+    border: none;
+}
+
+h1 {
+    border-bottom: 1px solid grey;
+    text-align: center;
+    padding: 10px;
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+}
+
+.content{
+    margin-top: 80px;
+    border: 1px solid grey ;
+    width: 40%;
+    margin-left: 30%;
+}
